@@ -16,10 +16,10 @@ guests.Add(p2);
 Suite suite = new Suite(suiteType: "Premium", capacity: 2, dailyValue: 30);
 
 // Cria uma nova booking, passando a suíte e os hóspedes
-Booking booking = new Booking(reservedDays: 5);
+Booking booking = new Booking(reservedDays: 12);
 booking.AddingSuite(suite);
 booking.AddingGuests(guests);
 
 // Exibe a quantidade de hóspedes e o valor da diária
 Console.WriteLine($"Hóspedes: {booking.GetQuantityGuests()}");
-Console.WriteLine($"Valor diária: {booking.CalculateDailyValue()}");
+Console.WriteLine($"Valor diária: {booking.CalculateDailyValue():C}");

@@ -42,14 +42,14 @@ namespace hosting_system.Models
 
         public decimal CalculateDailyValue()
         {
-            decimal valor = 0;
+            decimal valueCalculate = Suite.DailyValue * ReservedDays;
 
-            if (true)
+            if (ReservedDays >= 10)
             {
-                valor = 0;
+                valueCalculate = valueCalculate - (valueCalculate * 0.10M);
             }
 
-            return valor;
+            return valueCalculate;
         }
     }
 }

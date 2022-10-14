@@ -11,7 +11,7 @@ namespace hosting_system.Models
         public Suite Suite { get; set; }
         public int ReservedDays { get; set; }
 
-        public Booking() {}
+        public Booking() { }
 
         public Booking(int reservedDays)
         {
@@ -20,13 +20,13 @@ namespace hosting_system.Models
 
         public void AddingGuests(List<Person> guests)
         {
-            if (true)
+            if (Suite.Capacity >= guests.Count)
             {
                 Guests = guests;
             }
             else
             {
-                
+                throw new ArgumentException("Essa suite tem a capacidade insuficiente para hospedes!");
             }
         }
 
@@ -37,7 +37,7 @@ namespace hosting_system.Models
 
         public int GetQuantityGuests()
         {
-            return 0;
+            return Guests.Count;
         }
 
         public decimal CalculateDailyValue()
